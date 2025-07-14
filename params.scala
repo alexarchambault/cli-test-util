@@ -1,5 +1,6 @@
 //> using dep "com.lihaoyi::os-lib:0.9.3"
 //> using dep "com.lihaoyi::pprint::0.8.1"
+//> using dep "io.github.alexarchambault:is-terminal:0.1.2"
 
 //> using scala "2.13.12", "3.3.0", "2.12.18"
 //> using jvm "8"

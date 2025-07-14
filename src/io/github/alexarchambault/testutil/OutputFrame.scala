@@ -19,7 +19,7 @@ import java.io.OutputStreamWriter
 /** Displays the last `height` lines in the terminal via `out`, updating them along time */
 final class OutputFrame(
   out: Writer = new OutputStreamWriter(System.err),
-  height: Int = math.min(10, OutputFrame.maxHeight()),
+  height: Int = OutputFrame.maxHeight().map(math.min(10, _)).getOrElse(10),
   preamble: Seq[String] = Seq("--- Test is running ---"),
   postamble: Seq[String] = Nil,
   widthShift: Int = 0
@@ -161,8 +161,11 @@ final class OutputFrame(
 
 object OutputFrame {
 
-  def maxHeight(): Int =
-    ConsoleDim.height()
+  def maxHeight(): Option[Int] =
+    if (io.github.alexarchambault.isterminal.IsTerminal.isTerminal())
+      Some(ConsoleDim.height())
+    else
+      None
 
   private final class Lines(height: Int) {
 
