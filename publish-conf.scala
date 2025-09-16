@@ -1,6 +1,6 @@
 //> using publish.name "test-util"
 //> using publish.ci.computeVersion "git:tag"
-//> using publish.ci.repository "central-s01"
+//> using publish.ci.repository "central"
 //> using publish.ci.user "env:PUBLISH_USER"
 //> using publish.ci.password "env:PUBLISH_PASSWORD"
 //> using publish.ci.secretKey "env:PUBLISH_SECRET_KEY"
