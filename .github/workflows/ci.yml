@@ -22,7 +22,6 @@ jobs:
       run: scala-cli --power compile . --cross
 
   publish:
-    needs: compile
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
